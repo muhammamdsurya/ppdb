@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 02, 2023 at 03:08 PM
+-- Generation Time: Jun 02, 2023 at 03:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,9 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `tgl_daftar`, `nm_dpn`, `nm_blkg`, `adm_email`, `password`, `foto`) VALUES
-(3, '2023-05-28 19:19:25', 'Admin', 'Blkg', 'admin@admin', 'admin', '647346cdb271a.png'),
-(4, '2023-05-28 03:38:35', 'admin', 'two', 'admintwo@gmail.com', '321', '64726a4bcef0a.jpg'),
-(5, '2023-05-28 04:08:22', 'admin', 'two', 'admin@admin', '123', '6472714631f67.jpg');
+(6, '2023-06-02 20:15:23', 'admin', 'pertama', 'admin@admin', 'admin', '6479eb6b949ec.png');
 
 -- --------------------------------------------------------
 
@@ -59,14 +57,6 @@ CREATE TABLE `doc` (
   `rapor` text DEFAULT NULL,
   `akta` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `doc`
---
-
-INSERT INTO `doc` (`userid`, `ijazah`, `kk`, `rapor`, `akta`) VALUES
-(14, '64726e110dd7b.jpg', '64726e110e1bd.png', '64726e110e275.jpg', '64726e110e30f.jpeg'),
-(15, '6473467998a03.jpeg', '6473467998db5.png', '6473467998e4e.jpg', '6473467998edf.jpg');
 
 -- --------------------------------------------------------
 
@@ -89,14 +79,6 @@ CREATE TABLE `pendaftar` (
   `status` text NOT NULL DEFAULT 'Belum Terkonfirmasi'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `pendaftar`
---
-
-INSERT INTO `pendaftar` (`userid`, `id_data`, `nama`, `jk`, `tmp_lahir`, `tgl_lahir`, `npsn`, `agama`, `asal_sekolah`, `alamat`, `foto`, `status`) VALUES
-(14, 72, 'Risky Aja', 'Laki-Laki', 'BANYUMAS', '2002-12-28', '23213213123', 'Kristen', 'SMAN 9 BEKASI', 'karawang', '64726dcec2d20.jpg', 'Terkonfirmasi'),
-(15, 73, 'Naisya Dilla', 'Perempuan', 'Purwakarta', '2002-01-23', '2312322123', 'Islam', 'SMK Teratai Putih', 'Bekasi', '6473464c53df1.jpg', 'Terkonfirmasi');
-
 -- --------------------------------------------------------
 
 --
@@ -112,15 +94,6 @@ CREATE TABLE `user` (
   `foto` text DEFAULT NULL,
   `tgl_daftar` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`userid`, `nm_dpn`, `nm_blkg`, `user_email`, `password`, `foto`, `tgl_daftar`) VALUES
-(13, 'rojak', 'adi', 'rojak@gmail.com', '123', NULL, '2023-05-27 20:49:18'),
-(14, 'Rizky', 'aja', 'riski@gmail.com', '123', NULL, '2023-05-27 20:52:09'),
-(15, 'Naisya ', 'Dillaa', 'dillanaisya@gmail.com', 'abijar123', '', '2023-05-28 12:16:10');
 
 --
 -- Indexes for dumped tables
@@ -158,7 +131,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `doc`
