@@ -234,24 +234,22 @@ $admin = query("SELECT * FROM admin WHERE id = '$id'")[0];
           <div class="announcement shadow h-100 mx-3 mt-4">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Error veritatis iusto doloremque eos recusandae fugiat atque
-                vel natus ullam enim, dolorum, possimus blanditiis! Odit
-                debitis eius laborum impedit! Quod, aliquid!
+                Selamat datang Admin!, berikut tata cara konfirmasi data peserta yang baik dan benar :
               </li>
               <li class="list-group-item">
-                1. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Minima, eaque?
+                1. Admin menuju menu pendaftaran, lalu klik detail
               </li>
               <li class="list-group-item">
-                2. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                2. Pastikan data, dokumen peserta sudah valid dan benar
               </li>
               <li class="list-group-item">
-                3. Lorem ipsum dolor sit amet consectetur.
+                3. Jika dirasa sudah benar, admin dapat menekan tombol konfirmasi
               </li>
               <li class="list-group-item">
-                4. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aspernatur, libero.
+                4. Setelah di konfirmasi, peserta dapat mencetak bukti pendaftaran.
+              </li>
+              <li class="list-group-item">
+                5. Untuk menambahkan admin baru, bisa melalui menu Data admin.
               </li>
             </ul>
           </div>

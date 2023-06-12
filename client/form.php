@@ -181,7 +181,7 @@ if (isset($_POST["input"])) {
               <div class="col-md-6">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                  <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <input type="text" class="form-control" name="nama" required>
                 </div>
                 <p>Jenis Kelamin : </p>
                 <div class="mb-3 d-flex ">

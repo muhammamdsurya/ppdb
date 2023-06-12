@@ -220,11 +220,13 @@ $cekResult = $cek[0]['cek'];
 
           <div class="announcement shadow h-100 mx-3 mt-4">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error veritatis iusto doloremque eos recusandae fugiat atque vel natus ullam enim, dolorum, possimus blanditiis! Odit debitis eius laborum impedit! Quod, aliquid!</li>
-              <li class="list-group-item">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, eaque?</li>
-              <li class="list-group-item">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li class="list-group-item">3. Lorem ipsum dolor sit amet consectetur.</li>
-              <li class="list-group-item">4. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, libero.</li>
+              <li class="list-group-item">Selamat Datang di Pendaftaran peserta didik baru Ascend High School. Mohon perhatikan tata cara berikut sebelum mendaftar :</li>
+              <li class="list-group-item">1. Peserta diharuskan mengisi formulir terlebih dahulu sebelum mengisi dokumen.</li>
+              <li class="list-group-item">2. Setelah formulir sudah di isi, pastikan data sudah valid dan benar. Karna ketika sudah submit, data tidak dapat diubah.</li>
+              <li class="list-group-item">3. Setelah formulir berhasil di isi, peserta harus melengkapi data dokumen diantaranya yaitu rapor, akta, kk dan ijazah</li>
+              <li class="list-group-item">4. Dokumen yang di upload diharuskan berformat png, jpg atau jpeg. dan besar file max 1 mb. </li>
+              <li class="list-group-item">5. Setelah dokumen berhasil di upload, peserta dapat mengecek status Pendaftaran apakah sudah berhasil atau belum melalui menu dashboard atau tombol cek status di menu data formulir</li>
+              <li class="list-group-item">6. Setelah status Terkonfirmasi, peserta dapat mendownload bukti pendaftaran di menu data formulir yang nantinya akan ditunjukan untuk proses validasi secara langsung</li>
             </ul>
           </div>
 

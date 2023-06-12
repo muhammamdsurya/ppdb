@@ -15,25 +15,29 @@ if (isset($_POST["login"])) {
   $email = $_POST["email"];
   $password = $_POST["password"];
 
-  $admin = query("SELECT * FROM admin WHERE adm_email = '$email' AND password = '$password'");
-  $user = query("SELECT * FROM user WHERE user_email = '$email' AND password = '$password'");
+  $admin = query("SELECT * FROM admin WHERE adm_email = '$email'");
+  $user = query("SELECT * FROM user WHERE user_email = '$email'");
 
-  if ($admin) {
+  if ($admin && password_verify($password, $admin[0]["password"])) {
+    // Admin login berhasil
     $_SESSION["nama"] = $admin[0]["nm_dpn"];
     $_SESSION["role"] = "admin";
     $_SESSION["id"] = $admin[0]["id"];
     header("Location: admin/home.php");
-  } else if ($user) {
+  } else if ($user && password_verify($password, $user[0]["password"])) {
+    // User login berhasil
     $_SESSION["email"] = $user[0]["user_email"];
     $_SESSION["nama"] = $user[0]["nm_dpn"];
     $_SESSION["role"] = "user";
     $_SESSION["id"] = $user[0]["userid"];
     header("Location: client/home.php");
   } else {
+    // Username atau Password salah
     echo "<div class='alert alert-warning'>Username atau Password salah</div>
     <meta http-equiv='refresh' content='2'>";
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +96,6 @@ if (isset($_POST["login"])) {
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password" required>
-                      <a class="small" href="forgot-password.html">Lupa Password?</a>
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block" name="login">
                       Login

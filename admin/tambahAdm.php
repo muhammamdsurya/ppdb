@@ -183,26 +183,26 @@ if (isset($_POST["tambah"])) {
                 <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nama Depan</label>
-                    <input type="text" class="form-control" name="nm_dpn" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="nm_dpn" id="exampleInputEmail1" required>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nama Belakang</label>
-                    <input type="text" class="form-control" name="nm_blkg" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="nm_blkg" id="exampleInputEmail1" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" required>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" required>
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Foto</label>
-                  <input type="file" class="form-control" name="foto" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="file" class="form-control" name="foto" id="exampleInputEmail1" required>
                 </div>
                 <div class="my-1">
                   <button class="btn btn-primary btn-lg px-5" name="tambah" type="submit">Tambah</button>

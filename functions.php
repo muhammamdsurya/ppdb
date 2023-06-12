@@ -103,15 +103,27 @@ function tambahAdm($data)
   $password = $data["password"];
   $foto = upload("foto");
 
+  $cek = mysqli_query($conn, "SELECT adm_email FROM admin WHERE adm_email = '$email'");
+
+  if (mysqli_fetch_assoc($cek)) {
+    echo "<div class='alert alert-danger'>Email telah terdaftar</div>
+          <meta http-equiv='refresh' content='2; url=''/>  ";
+    return false;
+  }
+
   if (!upload("foto")) {
     return false;
   }
 
-  $query = "INSERT INTO admin (nm_dpn, nm_blkg, adm_email, password, foto) VALUES ('$nm_dpn','$nm_blkg','$email','$password','$foto')";
+  // Hash password menggunakan bcrypt
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+  $query = "INSERT INTO admin (nm_dpn, nm_blkg, adm_email, password, foto) VALUES ('$nm_dpn','$nm_blkg','$email','$hashedPassword','$foto')";
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
 }
+
 
 function formDaftar($data)
 {
@@ -160,6 +172,13 @@ function upload($formName)
   $error = $_FILES[$formName]['error'];
   $tmpName = $_FILES[$formName]['tmp_name'];
 
+  if ($error === UPLOAD_ERR_NO_FILE) {
+    echo "<script>
+    alert('Upload gambar terlebih dahulu!');
+    </script>";
+    return false;
+  }
+
   // Cek apakah gambar
   $extensiValid = ['jpg', 'png', 'jpeg'];
   $extensiGambar = explode('.', $namaFile);
@@ -199,12 +218,14 @@ function daftar($data)
   $cek = mysqli_query($conn, "SELECT user_email FROM user WHERE user_email = '$email'");
 
   if (mysqli_fetch_assoc($cek)) {
-    echo "<div class='alert alert-danger'>Username telah terdaftar</div>
+    echo "<div class='alert alert-danger'>Email telah terdaftar</div>
           <meta http-equiv='refresh' content='2; url=''/>  ";
     return false;
   }
 
-  $query = "INSERT INTO user (nm_dpn, nm_blkg, user_email, password) VALUES ('$nm_dpn', '$nm_blkg', '$email', '$password')";
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+  $query = "INSERT INTO user (nm_dpn, nm_blkg, user_email, password) VALUES ('$nm_dpn', '$nm_blkg', '$email', '$hashedPassword')";
 
   mysqli_query($conn, $query);
 

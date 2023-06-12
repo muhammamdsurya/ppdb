@@ -11,28 +11,82 @@ $id = $_SESSION["id"];
 
 $user = query("SELECT * FROM user WHERE userid = '$id'")[0];
 if (isset($_POST['upload'])) {
+  $namaFileIjazah = '';
+  $namaFileKK = '';
+  $namaFileRapor = '';
+  $namaFileAkta = '';
 
-  $namaFileIjazah = upload('ijazah');
-  $namaFileKK = upload('kk');
-  $namaFileRapor = upload('rapor');
-  $namaFileAkta = upload('akta');
+  // Cek jika file ijazah diunggah
+  if (isset($_FILES['ijazah']) && $_FILES['ijazah']['error'] === UPLOAD_ERR_OK) {
+    $namaFileIjazah = upload('ijazah');
+  }
 
-  var_dump($namaFileIjazah);
-  var_dump($namaFileAkta);
+  // Cek jika file kk diunggah
+  if (isset($_FILES['kk']) && $_FILES['kk']['error'] === UPLOAD_ERR_OK) {
+    $namaFileKK = upload('kk');
+  }
 
+  // Cek jika file rapor diunggah
+  if (isset($_FILES['rapor']) && $_FILES['rapor']['error'] === UPLOAD_ERR_OK) {
+    $namaFileRapor = upload('rapor');
+  }
 
-  // Menyimpan nama file ke dalam kolom yang berbeda dalam tabel database
-  $sql = "INSERT INTO doc (userid, ijazah, kk, rapor, akta)
-          VALUES ('$id','$namaFileIjazah', '$namaFileKK', '$namaFileRapor', '$namaFileAkta')";
+  // Cek jika file akta diunggah
+  if (isset($_FILES['akta']) && $_FILES['akta']['error'] === UPLOAD_ERR_OK) {
+    $namaFileAkta = upload('akta');
+  }
 
-  if ($conn->query($sql) === TRUE) {
-    echo "<div class='alert alert-success'>Berhasil Upload!</div>
-            <meta http-equiv='refresh' content='2; url= doc.php'/>  ";
+  // Periksa keberadaan data sebelum INSERT atau UPDATE
+  $existingDataQuery = "SELECT * FROM doc WHERE userid = '$id'";
+  $existingDataResult = $conn->query($existingDataQuery);
+  $existingData = $existingDataResult->fetch_assoc();
+
+  if ($existingData) {
+    // Jika data dengan userid yang sama sudah ada, lakukan UPDATE
+
+    // Mengatur nilai kolom dengan file yang diunggah ulang
+    if (!empty($namaFileIjazah)) {
+      $existingData['ijazah'] = $namaFileIjazah;
+    }
+    if (!empty($namaFileKK)) {
+      $existingData['kk'] = $namaFileKK;
+    }
+    if (!empty($namaFileRapor)) {
+      $existingData['rapor'] = $namaFileRapor;
+    }
+    if (!empty($namaFileAkta)) {
+      $existingData['akta'] = $namaFileAkta;
+    }
+
+    // Memperbarui data dalam tabel
+    $updateQuery = "UPDATE doc SET
+                      ijazah = '{$existingData['ijazah']}',
+                      kk = '{$existingData['kk']}',
+                      rapor = '{$existingData['rapor']}',
+                      akta = '{$existingData['akta']}'
+                    WHERE userid = '$id'";
+
+    if ($conn->query($updateQuery) === TRUE) {
+      echo "<div class='alert alert-success'>Berhasil Update!</div>
+            <meta http-equiv='refresh' content='2; url= doc.php'/>";
+    } else {
+      echo "<div class='alert alert-success'>Gagal Update!</div>
+            <meta http-equiv='refresh' content='2; url= doc.php'/>";
+    }
   } else {
-    echo "<div class='alert alert-success'>Gagal Upload!</div>
-            <meta http-equiv='refresh' content='2; url= doc.php'/>  ";
+    // Jika data belum ada, lakukan INSERT
+    $insertQuery = "INSERT INTO doc (userid, ijazah, kk, rapor, akta) VALUES ('$id', '$namaFileIjazah', '$namaFileKK', '$namaFileRapor', '$namaFileAkta')";
+    if ($conn->query($insertQuery) === TRUE) {
+      echo "<div class='alert alert-success'>Berhasil Upload!</div>
+            <meta http-equiv='refresh' content='2; url= doc.php'/>";
+    } else {
+      echo "<div class='alert alert-success'>Gagal Upload!</div>
+            <meta http-equiv='refresh' content='2; url= doc.php'/>";
+    }
   }
 }
+
+
 
 $doc = query("SELECT * FROM doc WHERE userid = '$id'");
 
@@ -207,7 +261,7 @@ $doc = query("SELECT * FROM doc WHERE userid = '$id'");
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Raport</label>
-                    <?php if (empty($doc[0]["ijazah"])) : ?>
+                    <?php if (empty($doc[0]["rapor"])) : ?>
                       <input type="file" name="rapor" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     <?php else : ?>
                       <div class="alert alert-success" role="alert">
@@ -217,7 +271,7 @@ $doc = query("SELECT * FROM doc WHERE userid = '$id'");
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Akta Kelahiran</label>
-                    <?php if (empty($doc[0]["ijazah"])) : ?>
+                    <?php if (empty($doc[0]["akta"])) : ?>
                       <input type="file" name="akta" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     <?php else : ?>
                       <div class="alert alert-success" role="alert">
