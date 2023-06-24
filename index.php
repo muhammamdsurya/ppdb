@@ -25,6 +25,14 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
 
+  <style>
+    .review .review-user img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -72,10 +80,7 @@
             <div class="col-lg-8 text-center text-lg-start">
               <h1 data-aos="fade-right">Penerimaan Peserta Didik Baru</h1>
               <p class="mb-5" data-aos="fade-right" data-aos-delay="100">
-                We are your best partner in fulfilling your export needs. With
-                the experience and expertise of our team, we are ready to
-                assist you in every step of the export process, from packaging
-                to delivery to the final destination.
+                Selamat datang di Ascend High School, rumah bagi para pemimpin masa depan! Ascend High School adalah sekolah unggulan yang menggabungkan pendidikan berkualitas tinggi dengan pengembangan karakter yang kokoh. Kami menawarkan lingkungan belajar yang inspiratif, mempersiapkan siswa untuk menghadapi tantangan dunia nyata dengan percaya diri.
               </p>
               <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500">
                 <a href="client/daftar.php" class="btn btn-outline-white">Daftar Sekarang</a>
@@ -223,15 +228,13 @@
                     </p>
                     <h3>Sekolah yang Hebat!</h3>
                     <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                        aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                        provident voluptates consectetur maiores quos.</p>
+                      <p>Sekolah ini adalah luar biasa! Dalam waktu singkat, saya telah melihat perkembangan luar biasa dalam diri saya. Para guru yang berdedikasi, kurikulum yang menantang, dan lingkungan belajar yang mendukung membuat setiap hari di sekolah ini menjadi pengalaman yang tak terlupakan.</p>
                     </blockquote>
 
                     <p class="review-user">
-                      <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
+                      <img src="assets/img/sadam.jpeg" alt="Image" class="img-fluid rounded mb-3 shadow">
                       <span class="d-block">
-                        <span class="text-black">Jean Doe</span>, &mdash; Angkatan 19
+                        <span class="text-black">Shadam Alfareza</span>, &mdash; Angkatan 21
                       </span>
                     </p>
 
@@ -247,17 +250,15 @@
                       <span class="bi bi-star-fill"></span>
                       <span class="bi bi-star-fill"></span>
                     </p>
-                    <h3>This App is easy to use!</h3>
+                    <h3>Fasilitas bintang lima!</h3>
                     <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                        aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                        provident voluptates consectetur maiores quos.</p>
+                      <p>Fasilitas di sekolah ini begitu mengesankan! Mereka memberikan sarana yang luar biasa bagi para siswa untuk menggali potensi mereka. Dari laboratorium ilmiah yang lengkap hingga perpustakaan yang kaya akan sumber daya, semuanya dirancang dengan baik untuk meningkatkan pembelajaran dan eksplorasi. </p>
                     </blockquote>
 
                     <p class="review-user">
-                      <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
+                      <img src="assets/img/jaki.jpg" alt="Image" class="img-fluid rounded mb-3 shadow">
                       <span class="d-block">
-                        <span class="text-black">Johan Smith</span>, &mdash; Angkatan 17
+                        <span class="text-black">Muhammad Dzaki Al-Fatih</span>, &mdash; Angkatan 21
                       </span>
                     </p>
 
@@ -273,17 +274,38 @@
                       <span class="bi bi-star-fill"></span>
                       <span class="bi bi-star-fill"></span>
                     </p>
-                    <h3>Awesome functionality!</h3>
+                    <h3>Terakreditasi Baik</h3>
                     <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam
-                        aperiam dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi,
-                        provident voluptates consectetur maiores quos.</p>
+                      <p>Sekolah ini telah terakreditasi dengan baik, dan itu sungguh mengagumkan! Saya memiliki kepercayaan penuh bahwa pendidikan saya di sini memenuhi standar tertinggi. Dengan akreditasi yang kuat, saya merasa yakin bahwa saya menerima pengajaran yang berkualitas.</p>
                     </blockquote>
 
                     <p class="review-user">
-                      <img src="assets/img/person_3.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
+                      <img src="assets/img/surya.png" alt="Image" class="img-fluid rounded mb-3 shadow">
                       <span class="d-block">
-                        <span class="text-black">Jean Thunberg</span>, &mdash; Angkatan 20
+                        <span class="text-black">Muhammad Surya Rusfauzi</span>, &mdash; Angkatan 21
+                      </span>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="review text-center">
+                    <p class="stars">
+                      <span class="bi bi-star-fill"></span>
+                      <span class="bi bi-star-fill"></span>
+                      <span class="bi bi-star-fill"></span>
+                      <span class="bi bi-star-fill"></span>
+                      <span class="bi bi-star-fill"></span>
+                    </p>
+                    <h3>Murah Banget!</h3>
+                    <blockquote>
+                      <p>Wow, sekolah ini benar-benar luar biasa dengan biaya yang sangat terjangkau! Saya tidak pernah membayangkan bisa mendapatkan pendidikan berkualitas tinggi dengan harga yang begitu terjangkau. Dengan biaya yang rendah, saya masih dapat menikmati fasilitas yang luar biasa.</p>
+                    </blockquote>
+
+                    <p class="review-user">
+                      <img src="assets/img/ijey.jpeg" alt="Image" class="img-fluid rounded mb-3 shadow">
+                      <span class="d-block">
+                        <span class="text-black">Nur Halizah</span>, &mdash; Angkatan 21
                       </span>
                     </p>
                   </div>
